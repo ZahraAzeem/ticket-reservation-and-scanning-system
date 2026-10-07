@@ -1,4 +1,5 @@
 from django.db import transaction
+from django.utils import timezone
 from rest_framework.decorators import action
 
 from rest_framework import serializers
@@ -89,4 +90,8 @@ class TicketViewSet(mixins.CreateModelMixin,
             ticket.status = 'used'
             ticket.save(update_fields=['status'])
             return Response({'status': 'Ticket scanned successfully.'})
+        if ticket.event.date < timezone.now():
+            ticket.status = 'expired'
+            ticket.save(update_fields=['status'])
+            return Response({'status': 'Ticket is expired.'}, status=status.HTTP_400_BAD_REQUEST)
         return Response({'status': 'Ticket cannot be scanned.'}, status=status.HTTP_400_BAD_REQUEST)
