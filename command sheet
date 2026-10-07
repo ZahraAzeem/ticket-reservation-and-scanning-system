@@ -8,5 +8,25 @@ python manage.py createsuperuser
 python manage.py runserver
 
 git init -b main
+//confirmed user and email 
+git config user.name
+git config user.email
+
+git add .
+git commit -m "set up project structure"
+gh repo create ticket-reservation-and-scanning-system —-public --source=. --remote=origin --push
+
+//after creating models
+git manage.py makemigrations
+git manage.py migrate
+
 
 Googled 
+gh repo create error
+AUTH_USER_MODEL attribute error
+including all fields in drf serializer in meta class
+
+
+
+Note
+imports were already added when the project was created
