@@ -21,6 +21,7 @@ gh repo create ticket-reservation-and-scanning-system —-public --source=. --re
 git manage.py makemigrations
 git manage.py migrate
 
+ python -m pip freeze > requirements.txt
 
 Googled 
 gh repo create error
