@@ -6,6 +6,7 @@ python manage.py startapp api
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
+python manage.py test api
 
 git init -b main
 //confirmed user and email 
@@ -28,7 +29,13 @@ including all fields in drf serializer in meta class
 importing genericapiviewset in drf and action tag syntax
 throwing validation error etc. in django syntax
 getting serializer object once newly created
-
+what to import for @transaction.atomic
+models.uuid field options like auto assigned and unique
+response not defined error
+operational error
+authenticating the user in the python test
+posting to the self urls in the python django test syntax
+in test, the count is not changing how to get new count
 
 
 
