@@ -1,3 +1,4 @@
+from django.db import transaction
 from rest_framework.decorators import action
 from rest_framework import serializers
 from rest_framework import mixins, status, viewsets
@@ -25,12 +26,17 @@ class TicketViewSet(mixins.CreateModelMixin,
     def get_queryset(self):
         # filter out the current users's tickets with the user and event
         # we are using select_related because a ticket is related to only one event and one user + to optimize the query
+        #  a user can only see his tickets
         return (
             Ticket.objects.filter(user=self.request.user).select_related("event", "user")
         )
     
+    
+    @transaction.atomic
     def perform_create(self, serializer):
         user_sent_event = serializer.validated_data["event"]
+        
+        # select for update locks the row in the database preventing others to write to it. 
         event = Event.objects.select_for_update().get(
             id=user_sent_event.id
         )
