@@ -5,6 +5,8 @@ class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
         fields = '__all__'
+        read_only_fields = ["available_ticket_count"]
+        
 
 
 class TicketSerializer(serializers.ModelSerializer):

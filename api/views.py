@@ -11,6 +11,8 @@ class EventViewSet(ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     
+    def perform_create(self, serializer):
+        serializer.save(available_ticket_count=serializer.validated_data["total_ticket_capacity"])
     
 
 class TicketViewSet(mixins.CreateModelMixin,
