@@ -36,6 +36,7 @@ operational error
 authenticating the user in the python test
 posting to the self urls in the python django test syntax
 in test, the count is not changing how to get new count
+adding default pagination in settings.py for rest framework
 
 
 
