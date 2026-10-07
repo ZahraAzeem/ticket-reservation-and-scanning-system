@@ -25,6 +25,11 @@ Googled
 gh repo create error
 AUTH_USER_MODEL attribute error
 including all fields in drf serializer in meta class
+importing genericapiviewset in drf and action tag syntax
+throwing validation error etc. in django syntax
+getting serializer object once newly created
+
+
 
 
 
