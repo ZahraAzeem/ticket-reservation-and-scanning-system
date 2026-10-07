@@ -1,0 +1,12 @@
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install django djangorestframework 
+python -m django startproject ticket_project .
+python manage.py startapp api
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+
+git init -b main
+
+Googled 
