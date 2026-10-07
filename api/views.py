@@ -11,6 +11,8 @@ from api.serializers import EventSerializer, TicketSerializer
 from rest_framework.response import Response
 # Create your views here.
 
+
+
 class EventViewSet(ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
@@ -83,6 +85,7 @@ class TicketViewSet(mixins.CreateModelMixin,
             return Response({"qr_token": "This field is required."},status=status.HTTP_400_BAD_REQUEST)
 
         try:
+            # row level locking
             ticket = Ticket.objects.select_for_update().get(qr_token=qr_token)
         except Ticket.DoesNotExist:
             return Response({"error": "Invalid ticket."},status=status.HTTP_404_NOT_FOUND)

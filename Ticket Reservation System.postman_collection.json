@@ -1,0 +1,87 @@
+{
+  "info": {
+    "_postman_id": "53d84d26-6549-4073-a77c-b3e5bd16e62d",
+    "name": "Ticket Reservation System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14349628"
+  },
+  "item": [
+    {
+      "name": "Create event",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Musical Night with Calvin Harris\",\n    \"venue\": \"Juffair beach\",\n    \"date\": \"2026-10-20T18:00:00+05:00\",\n    \"total_ticket_capacity\": 2,\n    \"available_ticket_count\": 2\n\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/events/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "events",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Generate ticket",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Musical Night with Calvin Harris\",\n    \"venue\": \"Juffair beach\",\n    \"date\": \"2026-10-20T18:00:00+05:00\",\n    \"total_ticket_capacity\": 2,\n    \"available_ticket_count\": 2\n\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/events/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "events",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Scan Ticket",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ]
+}
